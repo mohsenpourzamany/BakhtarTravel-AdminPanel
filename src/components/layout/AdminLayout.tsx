@@ -4,12 +4,14 @@ import Topbar from './Topbar'
 
 export default function AdminLayout() {
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface)' }}>
+    <div style={{ display: 'flex', minHeight: '100vh', background: '#F4F7FE' }}>
       <Sidebar />
-      <Topbar />
-      <main style={{ marginLeft: 220, paddingTop: 64, padding: '80px 24px 24px 244px', minHeight: '100vh' }}>
-        <Outlet />
-      </main>
+      <div style={{ flex: 1, marginLeft: 220, display: 'flex', flexDirection: 'column' }}>
+        <Topbar />
+        <main style={{ flex: 1, padding: '24px', paddingTop: '88px' }}>
+          <Outlet />
+        </main>
+      </div>
     </div>
   )
 }
